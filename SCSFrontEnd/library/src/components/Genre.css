@@ -1,0 +1,34 @@
+.filtrador-genero {
+    width: 30%;
+    padding: 20px 0;
+    margin-top: 10%;
+}
+.filtrador-genero h2 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.lista-genero {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.genero {
+    color: #333;
+    padding: 15px 0;
+    font-size: 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: color 0.2s ease;
+}
+
+.genero:hover {
+    color: #61b1e7;
+}
+
+.genero:last-child {
+    border-bottom: none;
+}

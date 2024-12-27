@@ -1,0 +1,106 @@
+
+
+.contenedor-libros {
+    margin: 10% 5%;
+    padding: 25px 50px;
+    background-color: rgb(245, 245, 245); 
+    text-align: center; 
+}
+
+
+.titulo-libros {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.libros-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 40px; 
+    max-width: 1200px; 
+    align-items: center;
+    margin-right: 15px;
+}
+
+
+.libro {
+    background: white; 
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    
+}
+
+.libro img {
+    width: 100%; 
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.libro h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.libro p {
+    font-size: 14px;
+    color: #777;
+}
+
+.listaLibros-paginacion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    width: fit-content;
+    margin: 0 auto;
+
+}
+
+.listaLibros-paginacion-container button {
+    background-color: #4c8baf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.listaLibros-paginacion-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.listaLibros-paginacion-container span {
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+.listaLibros-botonPagina {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.listaLibros-botonPagina:hover {
+    background-color: #f3f4f6;
+}
+
+.contenedor-principal {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5%;
+    gap: 5%;
+    align-items: flex-start;
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120">
+  <!-- Books stacked with silver/gray gradient -->
+  <defs>
+    <linearGradient id="silverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8E8E8" />
+      <stop offset="50%" style="stop-color:#C0C0C0" />
+      <stop offset="100%" style="stop-color:#A8A8A8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- First Book -->
+  <path d="M80 30 L280 30 L275 40 L75 40 Z" fill="url(#silverGradient)" />
+  <rect x="75" y="40" width="200" height="15" fill="url(#silverGradient)" />
+  
+  <!-- Second Book -->
+  <path d="M90 45 L290 45 L285 55 L85 55 Z" fill="url(#silverGradient)" />
+  <rect x="85" y="55" width="200" height="15" fill="url(#silverGradient)" />
+  
+  <!-- Third Book -->
+  <path d="M70 60 L270 60 L265 70 L65 70 Z" fill="url(#silverGradient)" />
+  <rect x="65" y="70" width="200" height="15" fill="url(#silverGradient)" />
+  
+  <!-- Text "SILVER" -->
+  <text x="85" y="110" font-family="Arial" font-weight="bold" font-size="48" fill="#505050">
+    SILVER
+  </text>
+  
+  <!-- Small text "library" -->
+  <text x="270" y="110" font-family="Arial" font-size="24" fill="#707070">
+    library
+  </text>
+</svg>
