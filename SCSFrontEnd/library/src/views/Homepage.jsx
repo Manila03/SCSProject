@@ -24,11 +24,12 @@ const Homepage = () => {
     useEffect(() => {
         if (selectedGenre) {
             console.log("a punto de hacer el dispatch", selectedGenre);
-            dispatch(getBooksByGenre({ genre: selectedGenre, page: currentPage, size: 10 }));
+            dispatch(getBooksByGenre({ genre: selectedGenre, page: currentPage, size: 8 }));
         } else {
-            dispatch(getAllBooks({ page: currentPage, size: 10 }));
+            dispatch(getAllBooks({ page: currentPage, size: 8 })); 
         }
     }, [dispatch, currentPage, selectedGenre]);
+    // aca ubicamos que size: 8; es decir que la cantidad de elementos que nos trae cada pagina es 8 (8 libros).
 
     useEffect(() => {
         setHasBooks(items.content.length > 0);
@@ -49,7 +50,6 @@ const Homepage = () => {
     };
 
     const handleTrashClick = (book) => {
-        console.log("Se hizo clic para eliminar:", book);
         setSelectedBook(book);
         setIsVisible(true);
     };
@@ -62,10 +62,13 @@ const Homepage = () => {
     };
 
     if (loading) return <LoadingSpinner />;
-    if (error) return <p>Error al cargar los libros: {error}</p>;
+    if (error) return <p className="error-message">Error al cargar los libros: {error}</p>;
 
     return (
         <>
+            <body className="body">
+                
+            
             <Header />
             <div className="contenedor-principal">
                 <Genre onGenreSelect={handleGenreSelect} />
@@ -76,6 +79,7 @@ const Homepage = () => {
                                 <Book
                                     key={index}
                                     title={book.title}
+                                    author={book.author}
                                     description={book.description}
                                     image={book.image}
                                     onTrashClick={() => handleTrashClick(book)}
@@ -117,6 +121,7 @@ const Homepage = () => {
                     </button>
                 </div>
             )}
+            </body>
         </>
     );
 };

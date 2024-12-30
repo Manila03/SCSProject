@@ -90,7 +90,7 @@ public class BookServiceImpl implements BookService {
             Book book = existingBook.get();
             bookResponse.setTitle(book.getTitle());
             bookResponse.setId(book.getId());
-            // bookResponse.setAuthor(book.getAuthor());
+            bookResponse.setAuthor(book.getAuthor());
             bookResponse.setDescription(book.getDescription());
             bookResponse.setGenre(book.getGenre());
             bookResponse.setIsbn(book.getIsbn());
@@ -144,9 +144,11 @@ public class BookServiceImpl implements BookService {
 
             book.setGenre(bookRequest.getGenre());
             bookResponse.setGenre(bookRequest.getGenre());
+            
+            book.setAuthor(bookRequest.getAuthor());
+            bookResponse.setAuthor(book.getAuthor());
 
             bookResponse.setId(book.getId());
-            bookResponse.setAuthor(book.getAuthor());
             bookResponse.setIsbn(book.getIsbn());
         String encodedString;
             try {
@@ -222,7 +224,7 @@ public class BookServiceImpl implements BookService {
         BookResponse bookResponse = new BookResponse();
         bookResponse.setTitle(book.getTitle());
         bookResponse.setId(book.getId());
-        // bookResponse.setAuthor(book.getAuthor());
+        bookResponse.setAuthor(book.getAuthor());
         bookResponse.setDescription(book.getDescription());
         bookResponse.setGenre(book.getGenre());
         bookResponse.setIsbn(book.getIsbn());

@@ -4,6 +4,7 @@ import { updateBook, getBookByIsbn } from "../redux/bookSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Header from "../components/Header";
 import { useNavigate, useParams } from "react-router-dom";
+import Dropdown from "../components/Dropdown";
 
 const ModBook = () => {
     const { isbn } = useParams();
@@ -13,6 +14,7 @@ const ModBook = () => {
     const [titulop, setTitulo] = useState("");
     const [descripcionp, setDescripcion] = useState("");
     const [generop, setGenero] = useState("");
+    const [autorp, setAutor] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [imagen, setImagen] = useState("");
 
@@ -23,9 +25,11 @@ const ModBook = () => {
     }, [dispatch, isbn]);
 
     useEffect(() => {
+        console.log(book);
         if (book) {
             setTitulo(book.title || "");
             setDescripcion(book.description || "");
+            setAutor(book.author || "");
             setGenero(book.genre || "");
             setImagen(book.image ? `data:image/jpeg;base64,${book.image}` : '/images/default-book.jpg');
         }
@@ -39,6 +43,7 @@ const ModBook = () => {
         const bookData = {
             isbn,
             title: titulop,
+            author: autorp,
             description: descripcionp,
             genre: generop,
         };
@@ -71,7 +76,7 @@ const ModBook = () => {
             <Header /> 
             <div className="ActualizarLibro-contenedor">
                 <div className="ActualizarLibro-book-image">
-                    <img src={imagen} alt="imagen" />
+                    <img src={imagen} alt="Click aquí para seleccionar una imagen" />
                 </div>
                 <div className="ActualizarLibro-book-detalles">
                     <label className="ActualizarLibro-label">Título:</label>
@@ -82,6 +87,19 @@ const ModBook = () => {
                         value={titulop}
                         onChange={(e) => setTitulo(e.target.value)}
                     />
+                    
+                    <label className="ActualizarLibro-label">Género:</label>
+                    <Dropdown setGenero={setGenero} defaultValue={generop} />
+
+                    <label className="ActualizarLibro-label">Autor:</label>
+                    <input
+                        type="text"
+                        className="ActualizarLibro-input-field"
+                        placeholder="Autor..."
+                        value={autorp}
+                        onChange={(e) => setAutor(e.target.value)}
+                    />
+                    
                     <label className="ActualizarLibro-label">Descripción:</label>
                     <textarea
                         className="ActualizarLibro-textarea-field"
@@ -96,14 +114,14 @@ const ModBook = () => {
                         value={isbn}
                         disabled
                     />
-                    <label className="ActualizarLibro-label">Género:</label>
+                    {/*
                     <input
                         type="text"
                         className="ActualizarLibro-input-field"
                         placeholder="Género..."
                         value={generop}
                         onChange={(e) => setGenero(e.target.value)}
-                    />
+                    /> */}
                     <button
                         className="ActualizarLibro-boton-publicar"
                         onClick={manejarActualizar}

@@ -35,7 +35,6 @@ export const getAllBooks = createAsyncThunk(
 
 export const createBook = createAsyncThunk("book/create",async (book) => {
     const { data } = await axiosInstance.post("http://localhost:4002/book/create", book);
-    console.log(book);
     return data;
 })
 

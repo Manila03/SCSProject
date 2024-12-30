@@ -9,9 +9,7 @@ import Header from '../components/Header.jsx';
     
     const NewBook = () => {
         const Navigate = useNavigate();
-        const crearLibro = () => {
-            Navigate('/newbook');
-        }
+        
             return (
                 <> 
                 
