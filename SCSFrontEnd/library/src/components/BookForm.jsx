@@ -80,7 +80,6 @@ const BookForm = () => {
             setDescripcion("");
             setAutor("");
             setIsbn("");
-            // setAutor("");
             setImagenSeleccionada(null);
         })
         setLibroNuevo(null)
@@ -117,7 +116,7 @@ const BookForm = () => {
                 />
 
                 <label className="PublicarLibro-label">Genero:</label>  
-                <Dropdown setGenero={setGenero} defaultValue={"seleccione un genero"}/>
+                <Dropdown setGenero={setGenero}/>
                 {/* {generop && <p>Genero seleccionado: {generop}</p>} */}
 
                 <label className="PublicarLibro-label">Autor:</label>

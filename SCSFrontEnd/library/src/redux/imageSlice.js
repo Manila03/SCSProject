@@ -4,7 +4,7 @@ import axiosInstance from "./axiosInstance";
 
 export const postImagen = createAsyncThunk(
     "imagenes/postImagen",
-    async (imageData) => { 
+    async (imageData) => {
     const { data } = await axiosInstance.post("http://localhost:4002/images", imageData, {
     headers: {
         "Content-Type": "multipart/form-data",
@@ -18,16 +18,16 @@ export const deleteImagen = createAsyncThunk(
 "imagenes/deleteImagen",
 async (imageId) => {
 await axiosInstance.delete(`http://localhost:4002/images/${imageId}`);
-return imageId; 
+return imageId;
 }
 );
 
 const imageSlice = createSlice({
 name: "imagenes",
 initialState: {
-items: [],       
-loading: false,  
-error: null,     
+items: [],
+loading: false,
+error: null,
 },
 reducers: {},
 extraReducers: (builder) => {

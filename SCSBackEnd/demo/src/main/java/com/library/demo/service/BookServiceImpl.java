@@ -212,10 +212,10 @@ public class BookServiceImpl implements BookService {
 
         if (existingBook.getImage() != null){
             imageService.deleteImage(existingBook.getImage().getId());
-            }
-            else {
-                bookRepository.delete(existingBook);
-            }
+        }
+        else {
+            bookRepository.delete(existingBook);
+        }
     }
 
     @Override

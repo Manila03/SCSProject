@@ -41,6 +41,7 @@ public class ImagesController {
         byte[] bytes = request.getFile().getBytes();
         Blob blob = new javax.sql.rowset.serial.SerialBlob(bytes);
         imageService.create(Image.builder().image(blob).build(), request.getIsbn());
+        // dado un archivo, lo convierte a bytes y luego mas tarde de bytes lo convierte a blob (para almacenarlo en la base de datos)
         return "created";
     }
 
